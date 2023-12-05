@@ -122,7 +122,7 @@ strong {
   width: 50%;
   justify-content: center;
   background-color: transparent;
-  border: 2px solid red;
+  border: transparent;
   border-radius: 5px;
 }
 
@@ -142,11 +142,14 @@ strong {
 
 .card-body, .list-group{
   background-color: white;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 0.35rem rgb(241, 241, 167));
+  border: rgb(0, 0, 0) solid 2px;
 }
 
 .yes-btn {
-  background-color: transparent;
-  padding: 10px;
+  background-color: green;
+  padding: 20px;
   border: solid 5px green;
   border-radius: 20px;
 }
@@ -158,10 +161,40 @@ strong {
 .yes-btn:active {
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
   -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-       box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.no-watch-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.nope-btn {
+  background-color: red;
+  padding: 10px;
+  border: solid 5px red;
+  border-radius: 20px;
+  transform: scaleX(-1)
+}
+
+.nope-btn:hover {
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.nope-btn:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
 .watch-btn {
   display: flex;
   justify-content: center;
 }
+
+.yes-no-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
