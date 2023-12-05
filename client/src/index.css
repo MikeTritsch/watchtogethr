@@ -108,3 +108,60 @@ strong {
   text-decoration: none;
   color: black;
 }
+
+.card-img-top {
+  width: 500px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.match-card {
+  width: 50%;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+}
+
+.list-group-item, 
+.card-title, 
+.card-text {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  font-size: 150%;
+}
+
+.card-body, .list-group{
+  background-color: white;
+}
+
+.yes-btn {
+  background-color: transparent;
+  padding: 10px;
+  border: solid 5px green;
+  border-radius: 20px;
+}
+
+.yes-btn:hover {
+  filter: drop-shadow(0 0 0.35rem #0ea604);
+}
+
+.yes-btn:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+       box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.watch-btn {
+  display: flex;
+  justify-content: center;
+}
