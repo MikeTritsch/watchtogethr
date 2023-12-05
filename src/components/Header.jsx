@@ -1,6 +1,7 @@
 // import logo from "../assets/images/WatchTogethr.png";
 // import lightLogo from "../assets/images/WatchTogethrWhiteVersion.png";
 import redLogo from "../assets/images/RedVersion-removebg-preview.png"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -24,20 +25,20 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-item" href="#">
+                <Link className="nav-item" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-item" href="#">
+                <Link className="nav-item" to="/Signup">
                   Join
                   {/* Need to change on login???? */}
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-item" href="#">
+                <Link className="nav-item" to="/Match">
                   Watchtogethr
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

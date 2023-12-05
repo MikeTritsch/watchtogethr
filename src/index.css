@@ -19,11 +19,11 @@
 
 .navbar-toggler {
   margin: 10px;
+  background-color: white;
   border: red 2px solid;
 }
 
 .navbar-toggler-icon {
-  background-color: red;
   border-radius: 10px;
 }
 
