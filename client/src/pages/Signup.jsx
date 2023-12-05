@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ADD_USER } from '../utils/auth';
+import { ADD_USER } from '../utils/mutations.js';
 
 const styles = {
   cardStyle: {
