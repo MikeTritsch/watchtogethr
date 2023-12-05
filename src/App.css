@@ -46,3 +46,27 @@ body {
   background-position: center;
   }
 }
+
+/* @media screen and (max-width: 692px) {
+  .nav-item {
+    font-size: 60%;
+  }
+
+  .navbar-toggler {
+    position: relative;
+    top: 100px;
+    left: 150px;
+  }
+
+  .navbar-nav {
+    position: relative;
+    top: 100px;
+    left: 150px;
+  }
+
+  .collapse {
+    position: relative;
+    top: 20px;
+    right: 70;
+  }
+} */
