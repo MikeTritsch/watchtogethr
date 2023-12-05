@@ -17,12 +17,6 @@ type Movie {
     whereAvailable: String
 }
 
-type Friend {
-    _id: ID!
-    username: String!
-    movies: [Movie]
-}
-
 type Auth {
     token: ID!
     user: User
@@ -40,8 +34,8 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addMovie(movieId: ID!, title: String!): Movie
     deleteMovie(movieID: ID!): Movie
-    addFriend(friendId: ID!, username: String!): Friend
-    deleteFriend(friendId: ID!): Friend
+    addFriend(username: String!): User
+    deleteFriend(friendId: ID!): User
 }`
 
 
