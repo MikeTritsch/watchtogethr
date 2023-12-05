@@ -1,10 +1,15 @@
-import logo from '../assets/images/WatchTogethr.png'
+// import logo from "../assets/images/WatchTogethr.png";
+// import lightLogo from "../assets/images/WatchTogethrWhiteVersion.png";
+import redLogo from "../assets/images/RedVersion-removebg-preview.png"
 
 const Header = () => {
   return (
-    <div>
+    <>
+      <div className="logo-div">
+        <img className="logo" src={redLogo} alt={"Watch Togethr Logo"} />
+      </div>
       <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid">
+        <div className="nav-div container-fluid">
           <button
             className="navbar-toggler"
             type="button"
@@ -19,18 +24,18 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="#">
+                <a className="nav-item" href="#">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-item" href="#">
                   Join
                   {/* Need to change on login???? */}
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-item" href="#">
                   Watchtogethr
                 </a>
               </li>
@@ -38,10 +43,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <div className="logo-div">
-      <img className="logo" src={logo} alt={"Watch Togethr Logo"}/>
-      </div>
-    </div>
+    </>
   );
 };
 

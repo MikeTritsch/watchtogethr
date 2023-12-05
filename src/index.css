@@ -2,12 +2,50 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* border: red solid 2px; */
+}
+
+.navbar {
+  width: 25%;
 }
 
 .navbar a{
   color: white;
+  font-size: 150%;
+  padding: 20px;
+  text-decoration: none;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.navbar-toggler {
+  margin: 10px;
+  border: red 2px solid;
+}
+
+.navbar-toggler-icon {
+  background-color: red;
+  border-radius: 10px;
+}
+
+.navbar a:hover {
+  color: red;
+}
+
+.navbar a:active {
+  color: red;
+}
+
+.logo-div {
+  position: relative;
+  text-align: center;
 }
 
 .logo {
-  background-color: transparent;
+  height: 200px;
+  width: 200px;
+}
+
+.nav-div {
+  position: relative;
+  bottom: 150px;
 }
