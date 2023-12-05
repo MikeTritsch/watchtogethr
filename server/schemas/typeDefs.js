@@ -4,7 +4,7 @@ _id: ID!
 username: String!
 email: String!
 password: String!
-friends: Array
+friends: [User]
 movies: [Movie]
 }
 

@@ -1,3 +1,4 @@
+
 const { User, Movies, Movie } = require('../models')
 const {signToken, AuthenticationError} = require ('../../src/utils/auth');
 
