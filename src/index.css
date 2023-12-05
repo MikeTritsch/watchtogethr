@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Red Hat Display', sans-serif;
   /* border: red solid 2px; */
 }
 
@@ -48,4 +49,62 @@
 .nav-div {
   position: relative;
   bottom: 150px;
+}
+
+.motto-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+}
+
+.motto {
+  color: white;
+  font-size: 500%;
+}
+
+.join-btn {
+  background-color: white;
+  width: 100px;
+  border-radius: 20px;
+  border: 1px red solid;
+}
+
+.join-btn:hover {
+  background-color: red;
+}
+
+.join-btn:active {
+  background-color: red;
+}
+
+.btn-div {
+  display: flex;
+  /* background-color: rgb(43, 40, 40); */
+  justify-content: center;
+}
+
+.about-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 70px;;
+}
+
+.about-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  text-align: center;
+  font-size: large;
+}
+
+strong {
+  color: red;
+}
+
+.home-to-join {
+  text-decoration: none;
+  color: black;
 }
