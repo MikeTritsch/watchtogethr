@@ -36,7 +36,7 @@ type Query {
 }
 
 type Mutation {
-    createUser(username: String!, email: String! password: String!): Auth
+    createUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addMovie(movieId: ID!, title: String!): Movie
     deleteMovie(movieID: ID!): Movie
