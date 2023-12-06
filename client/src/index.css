@@ -161,7 +161,7 @@ strong {
   font-size: 150%;
 }
 
-.card-body, .list-group{
+.match-card-body, .list-group{
   background-color: white;
   border-radius: 20px;
   filter: drop-shadow(0 0 0.35rem rgb(241, 241, 167));
@@ -223,3 +223,7 @@ strong {
   color: white;
 }
 
+#signupCard {
+  background: rgba(128, 128, 128,0.7);
+  filter: drop-shadow(0 0 0.35rem);
+}
