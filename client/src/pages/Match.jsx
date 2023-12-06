@@ -10,7 +10,7 @@ const Match = () => {
           <div className="card-image">
             <img src={redLogo} className="card-img-top" alt="..." />
           </div>
-          <div className="card-body">
+          <div className="card-body match-card-body">
             <h5 className="card-title">
               <strong>Title:</strong> Across The Universe</h5>
             <p className="card-text">
