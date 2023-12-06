@@ -60,8 +60,9 @@ const Match = () => {
           </button>
         </div>
       </div>
+    </div>
     </>
-  );
-};
+  )
+}
 
 export default Match;
