@@ -2,7 +2,7 @@ body {
   background-image: url('./assets/images/couple-hero.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 200vh;
+  height: 220vh;
 }
 
 @media screen and (min-width: 1025px) {
@@ -31,6 +31,14 @@ body {
   body {
   background-size: cover;
   background-position: center;
+  }
+
+  .card-image img{
+    width: 200px;
+  }
+
+  .card-text {
+    display: none;
   }
 }
 
