@@ -41,6 +41,30 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
+            <div className="search-form-home container-fluid d-flex flex-column align-items-end">              
+              <form className="search-form-home d-flex" role="search">
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search for a friend..."
+                  aria-label="Search"
+                />
+                <button className="btn search-btns btn-outline-danger" type="submit">
+                  Search
+                </button>
+              </form>
+              <form className="d-flex" role="search">
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search movies..."
+                  aria-label="Search"
+                />
+                <button className="btn search-btns btn-outline-danger" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </nav>
