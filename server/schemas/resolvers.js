@@ -1,5 +1,6 @@
+
 const { User, Movies, Movie } = require('../models')
-const {signToken, AuthenticationError} = require ('../../src/utils/auth');
+const {signToken, AuthenticationError} = require ('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -12,24 +13,6 @@ const resolvers = {
             const user = await User.create(args);
             return user;
         },
-        // updateUser: async(parent, args) => {
-        //     const user = await User.findOneAndUpdate(
-        //         {_id}
-        //     )
-        //     return user
-        // },
-        // deleteUser: async(parent, args) => {
-        //     const user = await User.deleteOne(
-        //         {_id}
-        //     )
-        //     return user
-        // },
-
-        // addUser: async (parent, {username, email, password}) => {
-        //     const user = await User.create({ username, email, password });
-        //     const token = signToken(user);
-        //     return { token, user };
-        // },
         login: async (parent, { email, password }) =>
         {
             const user = await User.findOne({ email });
@@ -48,6 +31,12 @@ const resolvers = {
 
             return { token, user }
         }, 
+        me: async (parent, args, context) => {
+            if (context.user) {
+              return User.findOne({ _id: context.user._id }).populate('friends');
+            }
+            throw AuthenticationError;
+          },
         addMovie: async (parent, {_id, title}) =>
         {
             const movie = await Movie.findOne({ title });
@@ -67,23 +56,46 @@ const resolvers = {
             }
 
         },
-        addFriend: async (parent, { _id }) =>
+        addFriend: async (parent, { username }, context) =>
         {
-            const friend = await User.findOne({_id});
+            const user = await User.findOneAndUpdate(
+                { username: username },
+                { $addToSet: { friends: context.user._id } },
+                { runValidators: true, new: true }
+            );
 
-            if(!friend) {
-                console.alert('No such user. Please try again')
+            const userFriend = await User.findOneAndUpdate(
+                { _id: _id },
+                { $addToSet: { friends: user._id } },
+                {runValidators: true, new: true}
+            )
+
+            if (!user) {
+                return res.status(404).json({ message: 'No user with this id' });
             }
 
-            return friend
+            return {user}
+
         },
-        deleteFriend: async (parent, { _id }) =>
+        deleteFriend: async (parent, { username }, context) =>
         {
-            const deleteFriend = await User.findOneAndDelete({_id});
+            const user = await User.findOneAndDelete(
+                { username: username },
+                { $pull: { friends: { friends: context.user._id } } },
+                { runValidators: true, new: true }
+            );
 
-            if(! deleteFriend) {
-                console.alert ('Friend not deleted')
+            const removeFriend = await User.findOneAndUpdate(
+                { _id: _id },
+                { $addToSet: { friends: user._id } },
+                {runValidators: true, new: true}
+            )
+
+            if (!user) {
+                return res.status(404).json({ message: 'No user with this id' });
             }
+
+            return {user}
         }
     },
 }
@@ -94,3 +106,22 @@ module.exports = resolvers
 //how do we handle adding friends?
 //what queries do we really need? Find a single user to login, search for friends to add to friend list, search for media by title, delete friend, delete media from array
 //how to we assign movies to a user? (no entry, just ID#)
+
+      // updateUser: async(parent, args) => {
+        //     const user = await User.findOneAndUpdate(
+        //         {_id}
+        //     )
+        //     return user
+        // },
+        // deleteUser: async(parent, args) => {
+        //     const user = await User.deleteOne(
+        //         {_id}
+        //     )
+        //     return user
+        // },
+
+        // addUser: async (parent, {username, email, password}) => {
+        //     const user = await User.create({ username, email, password });
+        //     const token = signToken(user);
+        //     return { token, user };
+        // },

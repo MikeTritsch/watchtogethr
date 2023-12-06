@@ -4,7 +4,7 @@ _id: ID!
 username: String!
 email: String!
 password: String!
-friends: Array
+friends: [User]
 movies: [Movie]
 }
 
@@ -15,12 +15,6 @@ type Movie {
     actors: String
     year: Int!
     whereAvailable: String
-}
-
-type Friend {
-    _id: ID!
-    username: String!
-    movies: [Movie]
 }
 
 type Auth {
@@ -36,12 +30,12 @@ type Query {
 }
 
 type Mutation {
-    addUser(username: String!, email: String! password: String!): Auth
+    createUser(username: String!, email: String! password: String!): Auth
     login(email: String!, password: String!): Auth
     addMovie(movieId: ID!, title: String!): Movie
-    removeMove(movieID: ID!): Movie
-    addFriend(friendId: ID!, username: String!): Friend
-    removeFriend(friendId: ID!): Friend
+    deleteMovie(movieID: ID!): Movie
+    addFriend(username: String!): User
+    deleteFriend(friendId: ID!): User
 }`
 
 

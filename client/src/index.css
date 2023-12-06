@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Red Hat Display', sans-serif;
+  /* border: red solid 2px; */
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  width: 25%;
+}
+
+.navbar a{
+  color: white;
+  font-size: 150%;
+  padding: 20px;
+  text-decoration: none;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.navbar-toggler {
+  margin: 10px;
+  background-color: white;
+  border: red 2px solid;
+}
+
+.navbar-toggler-icon {
+  border-radius: 10px;
+}
+
+.navbar a:hover {
+  color: red;
+}
+
+.navbar a:active {
+  color: red;
+}
+
+.logo-div {
+  position: relative;
+  text-align: center;
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+}
+
+.nav-div {
+  position: relative;
+  bottom: 150px;
+}
+
+.motto-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+}
+
+.motto {
+  color: white;
+  font-size: 500%;
+}
+
+.join-btn {
+  background-color: white;
+  width: 100px;
+  border-radius: 20px;
+  border: 1px red solid;
+}
+
+.join-btn:hover {
+  background-color: red;
+}
+
+.join-btn:active {
+  background-color: red;
+}
+
+.btn-div {
+  display: flex;
+  /* background-color: rgb(43, 40, 40); */
+  justify-content: center;
+}
+
+.about-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 70px;;
+}
+
+.about-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  text-align: center;
+  font-size: large;
+}
+
+.bio-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 70px;;
+}
+
+.bio-text {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: large;
+}
+
+strong {
+  color: red;
+}
+
+.home-to-join {
+  text-decoration: none;
+  color: black;
+}
+
+.card-img-top {
+  width: 500px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.match-card {
+  width: 50%;
+  justify-content: center;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 5px;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+}
+
+.list-group-item, 
+.card-title, 
+.card-text {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  font-size: 150%;
+}
+
+.card-body, .list-group{
+  background-color: white;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 0.35rem rgb(241, 241, 167));
+  border: rgb(0, 0, 0) solid 2px;
+}
+
+.yes-btn {
+  background-color: green;
+  padding: 20px;
+  border: solid 5px green;
+  border-radius: 20px;
+}
+
+.yes-btn:hover {
+  filter: drop-shadow(0 0 0.35rem #0ea604);
+}
+
+.yes-btn:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.no-watch-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.nope-btn {
+  background-color: red;
+  padding: 10px;
+  border: solid 5px red;
+  border-radius: 20px;
+  transform: scaleX(-1)
+}
+
+.nope-btn:hover {
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.nope-btn:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.watch-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.yes-no-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contact-links {
+  color: white;
+}
+
