@@ -6,6 +6,10 @@
   /* border: red solid 2px; */
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar {
   width: 25%;
 }
@@ -100,6 +104,23 @@
   font-size: large;
 }
 
+.bio-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 70px;;
+}
+
+.bio-text {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: large;
+}
+
 strong {
   color: red;
 }
@@ -140,7 +161,7 @@ strong {
   font-size: 150%;
 }
 
-.card-body, .list-group{
+.match-card-body, .list-group{
   background-color: white;
   border-radius: 20px;
   filter: drop-shadow(0 0 0.35rem rgb(241, 241, 167));
@@ -198,3 +219,11 @@ strong {
   padding: 20px;
 }
 
+.contact-links {
+  color: white;
+}
+
+#signupCard {
+  background: rgba(128, 128, 128,0.7);
+  filter: drop-shadow(0 0 0.35rem);
+}
