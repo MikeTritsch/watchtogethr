@@ -5,7 +5,6 @@ import nopeBtn from "../assets/images/icons/dont-watch-large.png"
 const Match = () => {
   return (
     <>
-      Match
       <div className="card-container">
         <div className="card match-card">
           <div className="card-image">
