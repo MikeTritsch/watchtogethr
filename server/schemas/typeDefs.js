@@ -23,9 +23,11 @@ type Auth {
 }
 
 type Query {
+    me: User
     users: [User]!
     user(username: String!): User
     movies(username: String): [Movie]
+
 
 }
 
@@ -36,6 +38,7 @@ type Mutation {
     deleteMovie(movieID: ID!): Movie
     addFriend(username: String!): User
     deleteFriend(friendId: ID!): User
+    me: User
 }`
 
 
