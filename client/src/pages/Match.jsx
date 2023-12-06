@@ -22,6 +22,19 @@ const Match = () => {
             <img src={redLogo} className="card-img-top" alt="..." />
           </div>
 
+          <div className="card-body match-card-body">
+            <h5 className="card-title">
+              <strong>Title:</strong> Across The Universe</h5>
+            <p className="card-text">
+            The music of The Beatles and the Vietnam War form the backdrop for the romance between an upper-class American girl and a poor Liverpudlian artist.
+            </p>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item"><strong>Genre:</strong> Romance</li>
+            <li className="list-group-item"><strong>Year:</strong> 2007</li>
+            <li className="list-group-item"><strong>Starring:</strong> Jim Sturgess, Evan Rachel Wood</li>
+          </ul>
+
+
           <div>
             <Movie 
               title={sampleMovie.title}
@@ -30,6 +43,7 @@ const Match = () => {
               year={sampleMovie.year}
               actors={sampleMovie.actors}
             />
+
           </div>
 
         </div>
