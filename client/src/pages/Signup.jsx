@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {useMutation} from '@apollo/client';
 import { ADD_USER } from '../utils/mutations.js';
+import { Link } from 'react-router-dom';
 
 const styles = {
   cardStyle: {
@@ -73,7 +74,7 @@ const Signup = () => {
           <button type="submit" className="btn btn-danger m-3">Create Account</button>
         </div>
         <div>
-          <p className="text-center">Already have an account? <a href='#Login' className="text-danger">Click here to login.</a></p>
+          <p className="text-center">Already have an account? <Link to="/Login">login</Link> </p>
         </div>
       </form>
       </div>
@@ -83,3 +84,5 @@ const Signup = () => {
 }
 
 export default Signup;
+
+//<a href='#Login' className="text-danger">Click here to login.</a>
