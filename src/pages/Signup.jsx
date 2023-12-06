@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ADD_USER } from '../utils/auth';
+//import { ADD_USER } from '../utils/auth';
 
 const styles = {
   cardStyle: {
@@ -9,36 +9,36 @@ const styles = {
 
 
 const Signup = () => {
-  const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  // const [formState, setFormState] = useState({
+  //   username: '',
+  //   email: '',
+  //   password: '',
+  // });
+  // const [addUser, { error, data }] = useMutation(ADD_USER);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+  //   setFormState({
+  //     ...formState,
+  //     [name]: value,
+  //   });
+  // };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   console.log(formState);
 
-    try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
+  //   try {
+  //     const { data } = await addUser({
+  //       variables: { ...formState },
+  //     });
 
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+  //     Auth.login(data.addUser.token);
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
+  // };
 
 
 
