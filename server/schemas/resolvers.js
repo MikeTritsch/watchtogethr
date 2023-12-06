@@ -4,9 +4,16 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        user: async () => {
-            return User.find({});
+        users: async () => {
+            return User.find({}).populate('movies');
         },
+        movies: async () => {
+            return Movie.find({})
+        },
+        user: async (parent, args) => {
+            return await User.findById(args.id).populate('movies')
+        }
+
     },
     Mutation: {
         createUser: async (parent, { username, email, password}) => {

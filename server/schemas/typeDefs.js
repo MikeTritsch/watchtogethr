@@ -4,17 +4,19 @@ _id: ID!
 username: String!
 email: String!
 password: String!
-friends: [User]
 movies: [Movie]
+friends: [User]
 }
 
 type Movie {
     _id: ID!
     title: String!
     director: String!
-    actors: String
+    actors: String!
     year: Int!
-    whereAvailable: String
+    whereAvailable: String!
+    plot: String!
+    genre: String!
 }
 
 type Auth {
@@ -24,9 +26,9 @@ type Auth {
 
 type Query {
     me: User
-    users: [User]!
-    user(username: String!): User
-    movies(username: String): [Movie]
+    users: [User]
+    user(id: ID!): User
+    movies: [Movie]
 
 
 }
