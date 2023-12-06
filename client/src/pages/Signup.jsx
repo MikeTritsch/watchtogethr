@@ -20,11 +20,16 @@ const Signup = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
+    setFormState((prevFormState) => ({
+      ...prevFormState,
       [name]: value,
+    }));
+
+    // setFormState({
+    //   ...formState,
+    //   [name]: value,
       
-    });
+    // });
   };
 
   const handleFormSubmit = async (event) => {
@@ -53,15 +58,15 @@ const Signup = () => {
       <form className="card-body" onSubmit={handleFormSubmit}>
         <div className="mb-3">
           <label for="username" className="form-label">Username</label>
-          <input type="username" className="form-control border-danger" placeholder="username" value={formState.name} onChange={handleChange}/>
+          <input name="username" type="username" className="form-control border-danger" placeholder="username" value={formState.username} onChange={handleChange}/>
         </div>
         <div className="mb-3">
           <label for="email" className="form-label">Email</label>
-          <input type="email" className="form-control border-danger" placeholder="name@example.com" value={formState.email} onChange={handleChange}/>
+          <input name="email" type="email" className="form-control border-danger" placeholder="name@example.com" value={formState.email} onChange={handleChange}/>
         </div>
         <div>
           <label for="password" className="form-label">Password</label>
-          <input type="password" className="form-control border-danger" placeholder="password" value={formState.password} onChange={handleChange}/>
+          <input name="password" type="password" className="form-control border-danger" placeholder="password" value={formState.password} onChange={handleChange}/>
 
         </div>
         <div className="col-auto d-flex justify-content-center">
