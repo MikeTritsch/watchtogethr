@@ -12,6 +12,6 @@ const movieSchema = new Schema({
     Poster: {type: String, required: false}
 });
 
-const Movie = model('movie', movieSchema);
+const Movie = model('Movie', movieSchema);
 module.exports = Movie;
 
