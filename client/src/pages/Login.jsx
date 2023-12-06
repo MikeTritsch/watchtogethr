@@ -43,7 +43,7 @@ const Login = () => {
       <div className="d-flex justify-content-center align-items-center">
         <div className="card text-white border-danger w-50" >
           <h5 className="card-header">Login</h5>
-          <form className="card-body">
+          <form className="card-body" onSubmit={handleFormSubmit}>
             <div className="mb-3">
               <label for="emailUsername" className="form-label">Email or Username</label>
               <input name="email" type="emailUsername" className="form-control" placeholder="name@example.com/username" value={formState.email} onChange={handleChange}/>
