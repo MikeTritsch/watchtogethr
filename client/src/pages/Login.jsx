@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import { Link } from 'react-router-dom'
+import Rotate from 'react-reveal/Rotate';
 
 
 const Login = () => {
@@ -40,6 +41,7 @@ const Login = () => {
 
   return (
     <>
+    <Rotate bottom left>
       <div className="d-flex justify-content-center align-items-center">
         <div className="card text-white border-danger w-50" >
           <h5 className="card-header">Login</h5>
@@ -61,6 +63,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+      </Rotate>
     </>
   )
 };
