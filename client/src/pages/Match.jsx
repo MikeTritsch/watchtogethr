@@ -3,16 +3,33 @@ import watchBtn from "../assets/images/icons/watch-large.png"
 import nopeBtn from "../assets/images/icons/dont-watch-large.png"
 import Samplemovie from "../assets/images/startrek-placeholder.jpg"
 import Movie from "../components/Movie"
+import fs from 'fs';
 
-const sampleMovie = {
-  title: "Star Trek",
-  plot: "The brash James T. Kirk tries to live up to his father's legacy with Mr. Spock keeping him in check as a vengeful Romulan from the future creates black holes to destroy the Federation one planet at a time.",
-  genre: "Action, Adventure, Sci-Fi",
-  year: 2009,
-  actors: "Chris Pine, Zachary Quinto, Simon Pegg",
-  director: "J.J. Abrams",
-  whereAvailable: "Netflix"
+
+function searchFilms(imdbid) {
+  // replace `octocat` with anyone else's GitHub username
+
+  var baseUrl = "http://www.omdbapi.com/?apikey=ab6850df&page=1&i="
+
+
+  var requestUrl = baseUrl + imdbid
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+
+    });
 }
+
+var file = fs.readFileSync('./imdbids.csv','utf8')
+const imdbids = file.split('\n');
+var randomMovieId = imdbids[Math.floor(Math.random() * imdbids.length)];
+
+var sampleMovie = searchFilms(randomMovieId);
+
 
 const Match = () => {
   return (
