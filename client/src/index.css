@@ -223,7 +223,56 @@ strong {
   color: white;
 }
 
+.nav {
+  display: felx;
+  justify-content: space-around;
+  padding: 20px;
+  border: none;
+}
+
+.nav-link {
+  color: black;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 150%;
+  text-align: center;
+  background: rgba(128, 128, 128,0.7);
+}
+
+
 #signupCard {
   background: rgba(128, 128, 128,0.7);
   filter: drop-shadow(0 0 0.35rem);
+}
+
+.tab-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.profile-poster {
+  height: 250px;
+  padding: 15px;
+}
+
+.poster-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card {
+  border: solid red 5px;
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.profile-search {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.profile-ul {
+  padding: 0px;
 }
