@@ -11,6 +11,7 @@ import Match from './pages/Match.jsx'
 import Profile from './pages/Profile.jsx'
 import Signup from './pages/Signup.jsx'
 import Login from './pages/Login.jsx'
+import Friend from './pages/Friend.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/Login',
         element: <Login />
+      },
+      {
+        path: '/Friend',
+        element: <Friend />
       },
     ],
   },

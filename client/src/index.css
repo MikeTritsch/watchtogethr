@@ -294,3 +294,32 @@ strong {
   background-color: gray;
   color: black;
 }
+
+.movie-search-form {
+  align-items: center;
+}
+
+.friend-card {
+  display: flex;
+  justify-content: center;
+}
+
+.friend-card-body {
+  text-align: center;
+  width: 500px;
+  border: 5px red solid;
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.addFriend {
+  color: black;
+}
+
+.addFriend-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.addFriend-icon:hover {
+  color: red;
+}
