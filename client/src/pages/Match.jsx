@@ -1,19 +1,23 @@
 import watchBtn from "../assets/images/icons/watch-large.png"
 import nopeBtn from "../assets/images/icons/dont-watch-large.png"
-import Samplemovie from "../assets/images/startrek-placeholder.jpg"
 import Movie from "../components/Movie"
-import {QUERY_ALL_MOVIES} from "../utils/queries"
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { ADD_MOVIESMALL } from "../utils/mutations";
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
 
 const Match = () => {
 
-  let movieUrl = returnRandomMovie();
-
   const [posts, setPosts] = useState([]);
+  const [createMovieSmall] = useMutation(ADD_MOVIESMALL);
+  let vals = returnRandomMovie();
+
+  let movieUrl = vals[0];
+  let imdbID = vals[1]
 
   useEffect(() => {
 
@@ -26,7 +30,32 @@ const Match = () => {
         console.error(error);
       })
   }, []);
-  
+
+
+  const handleNope = async (event) => {
+    event.preventDefault();
+
+    try {
+      location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const handleWatch = async (event) => {
+    event.preventDefault();
+    console.log('purple', imdbID)
+    try {
+      const { data } = await createMovieSmall({ variables: { imdbID: imdbID } });
+      console.log('pink', data);
+
+    } catch (err) {
+      console.error(err);
+    }
+
+    console.log('blue', "MovieSmall Added!")
+  }
+
   return (
     <>
       <div className="card-container">
@@ -51,12 +80,12 @@ const Match = () => {
       <div className="gap-5 yes-no-container">
         <div className="no-watch-btn">
           <button className="nope-btn">
-            <img src={nopeBtn}></img>
+            <img src={nopeBtn} onClick={handleNope}></img>
           </button>
         </div>
         <div className="watch-btn">
           <button className="yes-btn">
-            <img src={watchBtn}></img>
+            <img src={watchBtn} onClick={handleWatch}></img>
           </button>
         </div>
       </div>
@@ -324,7 +353,6 @@ let sampleMovieIds = ["tt0111161",
 "tt1250777",
 "tt0926084",
 "tt0365748",
-"tt0411008",
 "tt0443706",
 "tt1343092",
 "tt0417741",
@@ -413,6 +441,6 @@ function returnRandomMovie() {
   let sampleMovie = sampleMovieIds[Math.floor(Math.random()*sampleMovieIds.length)];
   let movieUrl = baseUrl + sampleMovie
   
-  return movieUrl
+  return [movieUrl, sampleMovie]
 
 }

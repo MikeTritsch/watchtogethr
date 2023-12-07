@@ -25,15 +25,20 @@ type Auth {
     user: User
 }
 
+type MovieSmall {
+    imdbID: String!
+}
+
 type Query {
     me: User
     users: [User]
     user(id: ID!): User
     movies: [Movie]!
     movie(imdbID: String!): Movie
-
-
+    movieSmalls: [MovieSmall]!
 }
+
+
 
 type Mutation {
     createUser(username: String!, email: String! password: String!): Auth
@@ -43,6 +48,7 @@ type Mutation {
     addFriend(username: String!): User
     deleteFriend(friendId: ID!): User
     me: User
+    addMovieSmall(imdbID: String): MovieSmall
 }`
 
 
