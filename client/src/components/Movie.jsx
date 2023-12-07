@@ -6,7 +6,7 @@ export default function Movie(props) {
 
     // Helper function that generates a random width for our placeholder images
     return (
-        <div className="card-body">
+        <div className="match-card-body">
         <h5 className="card-title">
         <strong>Title: </strong>{props.title}</h5>
         <p className="card-text">
