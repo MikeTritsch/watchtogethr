@@ -7,9 +7,9 @@ const Friend = () => {
       <div className="friend-card-body card">
         <div className="card-body">
           <h5 className="card-title">Moviewatchr115</h5>
-            <a href="#" className="addFriend card-link">
+            <button className="btn addFriend card-link">
               <RiHeartAddFill className="addFriend-icon"/>
-            </a>
+            </button>
         </div>
       </div>
     </div>
