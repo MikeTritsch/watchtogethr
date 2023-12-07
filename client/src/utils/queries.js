@@ -35,4 +35,30 @@ query movies($username: String) {
         actors
         year
         whereAvailable
-}`
+}`;
+
+export const QUERY_MOVIE = gql`
+  query movie($imdbID: String) {
+    movies(imdbID: $imdbID) {
+        Title
+        Director
+        Actors
+        Year
+        Plot
+    }
+  }
+`;
+
+export const QUERY_ALL_MOVIES = gql`
+  query allMovies{
+    movies {
+      _id
+      Title
+      Genre
+      Plot
+      Year
+      Actors
+      Poster
+    }
+  }
+`;

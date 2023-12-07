@@ -68,12 +68,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 400px;
+  height: 500px;
 }
 
 .motto {
-  color: white;
-  font-size: 500%;
+  color: rgb(212, 4, 4);
+  font-size: 600%;
+  filter: drop-shadow(0 0 0.35rem rgb(241, 167, 167));
 }
 
 .join-btn {
@@ -101,7 +102,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-top: 70px;;
+  padding-top: 70px;
 }
 
 .about-text {
@@ -109,8 +110,9 @@ a {
   justify-content: center;
   align-items: flex-end;
   color: white;
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
   text-align: center;
-  font-size: large;
+  font-size: 150%;
 }
 
 .bio-div {
@@ -149,7 +151,7 @@ strong {
 }
 
 .match-card {
-  width: 50%;
+  width: 60%;
   justify-content: center;
   background-color: transparent;
   border: transparent;
@@ -159,6 +161,12 @@ strong {
 .card-image {
   display: flex;
   justify-content: center;
+  padding: 10px;
+}
+
+.card-image img{
+  border: double 5px white;
+  filter: drop-shadow(0 0 0.35rem rgb(241, 241, 167));
 }
 
 .list-group-item, 
@@ -175,6 +183,7 @@ strong {
   border-radius: 20px;
   filter: drop-shadow(0 0 0.35rem rgb(241, 241, 167));
   border: rgb(0, 0, 0) solid 2px;
+  padding: 15px;
 }
 
 .yes-btn {
@@ -233,7 +242,7 @@ strong {
 }
 
 .nav {
-  display: felx;
+  display: flex;
   justify-content: space-around;
   padding: 20px;
   border: none;

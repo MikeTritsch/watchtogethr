@@ -1,28 +1,27 @@
 import { Outlet } from 'react-router-dom';
-import { useState } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, } from '@apollo/client';
 import Header from './components/Header';
 import './App.css'
 
 
 
+
 const client = new ApolloClient({
-  
+  uri: '/graphql',
   cache: new InMemoryCache(),
 });
 
 function App() {
-  // const [loggedin, setIsLoggedIn] = useState(fasle);
-  // This will changed depending on our back-end logic
-
-
-
   return (
     <ApolloProvider client={client}>
-    <Header />
-    <Outlet />
+      <div className="flex-column justify-flex-start min-100-vh">
+        <Header />
+        <div className="container">
+          <Outlet />
+        </div>
+      </div>
     </ApolloProvider>
-  )
+  );
 }
 
-export default App
+export default App;
