@@ -10,13 +10,14 @@ friends: [User]
 
 type Movie {
     _id: ID!
-    title: String!
-    director: String!
-    actors: String!
-    year: Int!
-    whereAvailable: String!
-    plot: String!
-    genre: String!
+    Title: String!
+    Director: String!
+    Actors: String!
+    Year: Int!
+    Plot: String!
+    Genre: String!
+    imdbID: String!
+    Poster: String
 }
 
 type Auth {
@@ -28,7 +29,8 @@ type Query {
     me: User
     users: [User]
     user(id: ID!): User
-    movies: [Movie]
+    movies: [Movie]!
+    movie(imdbID: String!): Movie
 
 
 }
