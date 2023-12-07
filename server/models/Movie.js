@@ -2,13 +2,13 @@ const {Schema, model} = require('mongoose');
 
 const movieSchema = new Schema({
 
-    title: {type: String, required: true},
-    director: {type: String, required: true},
-    actors: {type: String, reuqired: true},
-    year: {type: Number, required: true},
-    whereAvailable: {type: String, required: true},
-    plot: {type: String, required: true},
-    genre: {type: String, required: true}
+    Title: {type: String, required: true},
+    Director: {type: String, required: true},
+    Actors: {type: String, reuqired: true},
+    Year: {type: Number, required: true},
+    Plot: {type: String, required: true},
+    Genre: {type: String, required: true},
+    imdbID: {type: String, required: true}
 });
 
 const Movie = model('movie', movieSchema);

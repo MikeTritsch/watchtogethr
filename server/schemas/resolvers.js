@@ -12,7 +12,11 @@ const resolvers = {
         },
         user: async (parent, args) => {
             return await User.findById(args.id).populate('movies')
+        },
+        movie: async (parent, args) => {
+            return Movie.findOne({imdbID: args.imdbID})
         }
+
 
     },
     Mutation: {

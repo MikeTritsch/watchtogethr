@@ -3,18 +3,23 @@ import watchBtn from "../assets/images/icons/watch-large.png"
 import nopeBtn from "../assets/images/icons/dont-watch-large.png"
 import Samplemovie from "../assets/images/startrek-placeholder.jpg"
 import Movie from "../components/Movie"
+import {QUERY_MOVIE} from "../utils/queries"
+import {QUERY_ALL_MOVIES} from "../utils/queries"
+import { useQuery, useMutation } from '@apollo/client';
 
-const sampleMovie = {
-  title: "Star Trek",
-  plot: "The brash James T. Kirk tries to live up to his father's legacy with Mr. Spock keeping him in check as a vengeful Romulan from the future creates black holes to destroy the Federation one planet at a time.",
-  genre: "Action, Adventure, Sci-Fi",
-  year: 2009,
-  actors: "Chris Pine, Zachary Quinto, Simon Pegg",
-  director: "J.J. Abrams",
-  whereAvailable: "Netflix"
-}
+
+
+
+var imdbId = "tt0114709";
 
 const Match = () => {
+  
+  const { loading, error, data } = useQuery(QUERY_ALL_MOVIES);
+  console.log(loading);
+  console.log(error);
+  console.log(data);
+  const movies = data?.movies || [];
+
   return (
     <>
       <div className="card-container">
@@ -22,18 +27,19 @@ const Match = () => {
           <div className="card-image">
             <img src={Samplemovie} className="card-img-top" alt="..." />
           </div>
-
-
-
           <div>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+              
             <Movie 
-              title={sampleMovie.title}
-              plot={sampleMovie.plot}
-              genre={sampleMovie.genre}
-              year={sampleMovie.year}
-              actors={sampleMovie.actors}
+              title="Sample"
+              plot={movie.Plot}
+              genre={movie.genre}
+              year={movies.Year}
+              actors={sampleMovie.Actors}
             />
-
+          )}
           </div>
 
         </div>
