@@ -55,7 +55,7 @@ const Signup = () => {
   return (
     <>
       <Rotate bottom left>
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="signup-form-container d-flex justify-content-center align-items-center">
         <div className="card text-white border-danger w-50" id='signupCard'>
         <h5 className="card-header">Sign Up</h5>
         <form className="card-body" onSubmit={handleFormSubmit}>

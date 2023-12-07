@@ -42,27 +42,31 @@ const Header = () => {
               </li>
             </ul>
             <div className="search-form-home container-fluid d-flex flex-column align-items-end">              
-              <form className="search-form-home d-flex" role="search">
+              <form className="movie-search-form d-flex" role="search">
                 <input
                   className="form-control me-2"
                   type="search"
                   placeholder="Search for a friend..."
                   aria-label="Search"
                 />
-                <button className="btn search-btns btn-outline-danger" type="submit">
-                  Search
-                </button>
+                <Link to="/Friend">
+                  <button className="btn search-btns btn-outline-danger" type="button">
+                    Search
+                  </button>
+                </Link>
               </form>
-              <form className="d-flex" role="search">
+              <form className="movie-search-form d-flex" role="search">
                 <input
                   className="form-control me-2"
                   type="search"
                   placeholder="Search movies..."
                   aria-label="Search"
                 />
-                <button className="btn search-btns btn-outline-danger" type="submit">
-                  Search
-                </button>
+                <Link to="/Match">
+                  <button className="btn search-btns btn-outline-danger" type="submit">
+                    Search
+                  </button>
+                </Link>
               </form>
             </div>
           </div>
