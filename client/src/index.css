@@ -22,6 +22,20 @@ a {
   font-family: 'Red Hat Display', sans-serif;
 }
 
+.logout-btn {
+  color: white;
+  font-size: 150%;
+  padding-left: 20px;
+  text-decoration: none;
+  font-family: 'Red Hat Display', sans-serif;
+  border: none;
+  background-color: transparent;
+}
+
+.logout-btn:hover {
+  color: red;
+}
+
 .search-form-home {
   padding-bottom: 10px;
 }

@@ -60,20 +60,22 @@ const Signup = () => {
         <h5 className="card-header">Sign Up</h5>
         <form className="card-body" onSubmit={handleFormSubmit}>
           <div className="mb-3">
-            <label for="username" className="form-label">Username</label>
+            <label htmlFor="username" className="form-label">Username</label>
             <input name="username" type="username" className="form-control border-danger" placeholder="username" value={formState.username} onChange={handleChange}/>
           </div>
           <div className="mb-3">
-            <label for="email" className="form-label">Email</label>
+            <label htmlFor="email" className="form-label">Email</label>
             <input name="email" type="email" className="form-control border-danger" placeholder="name@example.com" value={formState.email} onChange={handleChange}/>
           </div>
           <div>
-            <label for="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">Password</label>
             <input name="password" type="password" className="form-control border-danger" placeholder="password" value={formState.password} onChange={handleChange}/>
 
           </div>
           <div className="col-auto d-flex justify-content-center">
-            <button type="submit" className="btn btn-danger m-3">Create Account</button>
+            <Link to="/Profile">
+            <button onSubmit={handleFormSubmit} type="submit" className="btn btn-danger m-3">Create Account</button>
+            </Link>
           </div>
           <div>
             <p className="text-center">Already have an account? <Link to="/Login">login</Link> </p>
