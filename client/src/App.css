@@ -2,7 +2,7 @@ body {
   background-image: url('./assets/images/couple-hero.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 220vh;
+  min-height: 200vh;
 }
 
 @media screen and (min-width: 1025px) {
@@ -23,7 +23,6 @@ body {
   body {
   background-size: cover;
   background-position: center;
-  height: 100vh;
   }
 }
 

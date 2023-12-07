@@ -11,7 +11,7 @@ a {
 }
 
 .navbar {
-  width: 25%;
+  width: 100%;
 }
 
 .navbar a{
@@ -20,6 +20,15 @@ a {
   padding: 20px;
   text-decoration: none;
   font-family: 'Red Hat Display', sans-serif;
+}
+
+.search-form-home {
+  padding-bottom: 10px;
+}
+
+
+.search-form-home button{
+  width: 100px;
 }
 
 .navbar-toggler {
@@ -59,7 +68,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 500px;
+  height: 400px;
 }
 
 .motto {
@@ -223,7 +232,94 @@ strong {
   color: white;
 }
 
+.nav {
+  display: felx;
+  justify-content: space-around;
+  padding: 20px;
+  border: none;
+}
+
+.nav-link {
+  color: black;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 150%;
+  text-align: center;
+  background: rgba(128, 128, 128,0.7);
+}
+
+
 #signupCard {
   background: rgba(128, 128, 128,0.7);
   filter: drop-shadow(0 0 0.35rem);
+}
+
+.tab-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.profile-poster {
+  height: 250px;
+  padding: 15px;
+}
+
+.poster-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card {
+  border: solid red 5px;
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.profile-search {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.profile-ul {
+  padding: 0px;
+}
+
+.search-form-home input{
+  width: 200px;
+}
+
+.search-btns {
+  background-color: gray;
+  color: black;
+}
+
+.movie-search-form {
+  align-items: center;
+}
+
+.friend-card {
+  display: flex;
+  justify-content: center;
+}
+
+.friend-card-body {
+  text-align: center;
+  width: 500px;
+  border: 5px red solid;
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.addFriend {
+  color: black;
+}
+
+.addFriend-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.addFriend-icon:hover {
+  color: red;
 }

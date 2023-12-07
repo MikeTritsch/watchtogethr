@@ -4,15 +4,22 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        user: async () => {
+        users: async () => {
             return User.find({});
         },
+        movies: async () => {
+            return Movie.find({})
+        },
+        user: async (parent, args) => {
+            return await User.findById(args.id)
+        }
+
     },
     Mutation: {
         createUser: async (parent, { username, email, password}) => {
             const user = await User.create({ username, email, password});
             const token = signToken(user)
-            return {user, token} 
+            return {token, user};
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
@@ -114,10 +121,4 @@ module.exports = resolvers
 //         {_id}
 //     )
 //     return user
-// },
-
-// addUser: async (parent, {username, email, password}) => {
-//     const user = await User.create({ username, email, password });
-//     const token = signToken(user);
-//     return { token, user };
 // },
