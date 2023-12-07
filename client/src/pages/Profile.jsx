@@ -7,18 +7,18 @@ const Profile = () => {
       <div className="profile-container">
         <nav>
           <div className="nav nav-tabs" id="nav-tab" role="tablist">
-            <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-            <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+            <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Movies</button>
+            <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My Friends</button>
           </div>
         </nav>
         <div className="tab-content" id="nav-tabContent">
           <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <div className="profile-search container-fluid">
+          {/* <div className="profile-search container-fluid">
               <form className="d-flex" role="search">
                 <input className="form-control me-2" type="search" placeholder="Find A Movie" aria-label="Search"/>
                   <button className="btn btn-outline-danger" type="submit">Search</button>
               </form>
-            </div>
+            </div> */}
             <ul className="profile-ul">
               <li className="profile-card card mb-3">
                 <div className="card mb-3">
@@ -41,12 +41,12 @@ const Profile = () => {
             </ul>
           </div>
           <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div className="profile-search container-fluid">
+            {/* <div className="profile-search container-fluid">
               <form className="d-flex" role="search">
                 <input className="form-control me-2" type="search" placeholder="Find Your Friends" aria-label="Search"/>
                   <button className="btn btn-outline-danger" type="submit">Search</button>
               </form>
-            </div>
+            </div> */}
             <ul>
               <li className="profile-card card mb-3">
                 <div className="card mb-3">

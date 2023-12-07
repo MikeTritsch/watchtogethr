@@ -346,3 +346,8 @@ strong {
 .addFriend-icon:hover {
   color: red;
 }
+
+#error-page {
+  color: white;
+  margin: 25px;
+}
