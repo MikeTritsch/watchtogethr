@@ -73,9 +73,9 @@ const Signup = () => {
 
           </div>
           <div className="col-auto d-flex justify-content-center">
-            {/* <Link to="/Profile"> */}
+            <Link to="/Profile">
             <button onSubmit={handleFormSubmit} type="submit" className="btn btn-danger m-3">Create Account</button>
-            {/* </Link> */}
+            </Link>
           </div>
           <div>
             <p className="text-center">Already have an account? <Link to="/Login">login</Link> </p>

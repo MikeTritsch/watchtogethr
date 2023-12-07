@@ -2,8 +2,16 @@
 // import lightLogo from "../assets/images/WatchTogethrWhiteVersion.png";
 import redLogo from "../assets/images/RedVersion-removebg-preview.png"
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import Auth from '../utils/auth';
 
-const Header = () => {
+
+const Header = () => { 
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+  
   return (
     <>
       <div className="logo-div">
@@ -23,25 +31,26 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-item" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-item" to="/Signup">
-                  Join
-                  {/* Need to change on login???? */}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-item" to="/Match">
-                  Watchtogethr
-                </Link>
-              </li>
-            </ul>
-            <div className="search-form-home container-fluid d-flex flex-column align-items-end">              
+              {Auth.loggedIn() ? (
+                <>
+                <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <Link className="nav-item" to="/Profile">
+                      Profile
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-item" to="/Match">
+                      Watchtogethr
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <button className="logout-btn nav-item" onClick={logout}>
+                      Logout
+                    </button>
+                  </li>
+                  </ul>
+                  <div className="search-form-home container-fluid d-flex flex-column align-items-end">              
               <form className="movie-search-form d-flex" role="search">
                 <input
                   className="form-control me-2"
@@ -69,6 +78,23 @@ const Header = () => {
                 </Link>
               </form>
             </div>
+                </>
+              ) : (
+              <>
+                <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-item" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-item" to="/Signup">
+                    Join
+                  </Link>
+                </li>
+                </ul>
+              </>
+              )}
           </div>
         </div>
       </nav>
