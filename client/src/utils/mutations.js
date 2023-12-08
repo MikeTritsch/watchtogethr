@@ -26,6 +26,15 @@ export const CREATE_USER = gql`
   }
 `;
 
+
+export const ADD_FRIEND = gql `
+mutation addFriend($username: String!)
+  addFriend(username: $username) {
+    user {
+      username
+    }
+  }`;
+
 export const ADD_MOVIESMALL = gql`
   mutation addMovieSmall($imdbID: String!) {
     addMovieSmall(imdbID: $imdbID) {

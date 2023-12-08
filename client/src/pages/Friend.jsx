@@ -1,4 +1,5 @@
 import { RiHeartAddFill } from "react-icons/ri";
+import { ADD_FRIEND } from '../utils/mutations'
 import { QUERY_USER } from "../utils/queries";
 import { useLazyQuery } from "@apollo/client";
 import { useState, useEffect } from "react";
