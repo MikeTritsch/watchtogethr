@@ -26,6 +26,37 @@ export const CREATE_USER = gql`
   }
 `;
 
+export const CREATE_MOVIE = gql`
+  mutation createMovie($Actors: String!, $Director: String!, $Genre: String!, $Plot: String!, $Poster: String!, $Title: String!, $Year: String!, $imdbID: String!) {
+    createMovie(Actors: $Actors, Director: $Director, Genre: $Genre, Plot: $Plot, Poster: $Poster, Title: $Title, Year: $Year, imdbID: $imdbID) {
+        _id
+        Actors
+        Director
+        Genre
+        Plot
+        Poster
+        Title
+        Year
+        imdbID
+    }
+  }
+`;
+
+export const ADD_THOUGHT = gql`
+  mutation addThought($thoughtText: String!, $thoughtAuthor: String!) {
+    addThought(thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor) {
+      _id
+      thoughtText
+      thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+`;
+
 
 export const ADD_FRIEND = gql `
 mutation addFriend($id: ID!, $userFriend: ID!) {
@@ -35,6 +66,7 @@ mutation addFriend($id: ID!, $userFriend: ID!) {
       friends
     }
   }`;
+
 
 export const ADD_MOVIESMALL = gql`
   mutation addMovieSmall($imdbID: String!) {
@@ -46,8 +78,8 @@ export const ADD_MOVIESMALL = gql`
 `;
 
 export const LIKE_MOVIE = gql`
-  mutation likeMovie($email: String!, $imdbID: String!) {
-    likeMovie(email: $email, imdbID: $imdbID) {
+  mutation likeMovie($email: String!, $_id: ID!) {
+    likeMovie(email: $email, _id: $_id) {
       email
     }
   }

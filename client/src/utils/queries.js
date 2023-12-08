@@ -19,6 +19,25 @@ query user($username: String) {
     }
 }`;
 
+export const QUERY_USER_BY_EMAIL =
+    gql`
+query findUserByEmail($email: String!) {
+  findUserByEmail(email: $email) {
+        username
+        movies {
+          _id
+          Actors
+          Director
+          Genre
+          imdbID
+          Plot
+          Poster
+          Title
+          Year
+        }
+    }
+}`;
+
 export const QUERY_MOVIES =
     gql`
 query movies($username: String) {
@@ -42,6 +61,16 @@ export const QUERY_MOVIE = gql`
     }
   }
 `;
+
+export const FIND_MOVIE_BY_IMDBID = gql`
+  query findMovieByImdbID($imdbID: String!) {
+    findMovieByImdbID(imdbID: $imdbID) {
+        _id
+        Title
+    }
+  }
+`;
+
 
 export const QUERY_ALL_MOVIES = gql`
   query allMovies{
