@@ -6,6 +6,7 @@ email: String!
 password: String!
 movie: [Movie]
 friends: [User]
+likedMovies: [String]
 }
 
 type Movie {
@@ -49,6 +50,7 @@ type Mutation {
     deleteFriend(friendId: ID!): User
     me: User
     addMovieSmall(imdbID: String): MovieSmall
+    likeMovie(email: String!, imdbID: String!): User
 }`
 
 

@@ -14,7 +14,8 @@ const userSchema = new Schema({
     friends: [{
         type: Schema.Types.ObjectId,
         ref: 'User',
-    }]
+    }],
+    likedMovies: [{type: String}]
 });
 
 userSchema.pre('save', async function (next) {
