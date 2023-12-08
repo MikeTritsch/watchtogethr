@@ -7,6 +7,7 @@ password: String!
 movie: [Movie]
 friends: [User]
 likedMovies: [String]
+userFriend: [User]
 }
 
 type Movie {
