@@ -4,7 +4,7 @@ _id: ID!
 username: String!
 email: String!
 password: String!
-movies: [Movie]
+movie: [Movie]
 friends: [User]
 }
 
@@ -28,8 +28,8 @@ type Auth {
 type Query {
     me: User
     users: [User]
-    user(id: ID!): User
-    movies: [Movie]!
+    user(id: ID, username: String): User
+    movies(username: String): [Movie]
     movie(imdbID: String!): Movie
 
 
