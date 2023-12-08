@@ -4,7 +4,6 @@ import redLogo from "../assets/images/RedVersion-removebg-preview.png"
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Auth from '../utils/auth';
-import Search from './Search'
 
 
 
@@ -52,7 +51,6 @@ const Header = () => {
                     </button>
                   </li>
                   </ul>
-                  <Search></Search>
               </>    
               ) : (
               <>
