@@ -6,8 +6,6 @@ query users {
         _id
         username
         email
-        friends
-        movies
     }
 }`;
 
@@ -18,8 +16,6 @@ query user($username: String) {
         _id
         username
         email
-        friends
-        movies
     }
 }`;
 
