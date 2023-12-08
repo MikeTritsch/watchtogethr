@@ -75,6 +75,19 @@ const resolvers = {
         addMovieSmall: async (parent, {imdbID}) => {
             return MovieSmall.create({ imdbID });
         },
+
+        likeMovie: async(parent, {email, imdbID}) => {
+            const like = await User.findOneAndUpdate(
+                {email: email},
+                { $addToSet: { likedMovies: imdbID } },
+            );
+
+            if (!like) {
+                return res.status(404).json({ message: 'Cannot like movie!' });
+            }
+            return { email }
+        },
+
         addFriend: async (parent, { username }, context) => {
             const user = await User.findOneAndUpdate(
                 { username: username },
