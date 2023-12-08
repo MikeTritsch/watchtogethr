@@ -46,9 +46,8 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addMovie(movieId: ID!, title: String!): Movie
     deleteMovie(movieID: ID!): Movie
-    addFriend(id: ID!, friendId: ID!): User
+    addFriend(addFriendId: ID!, friendId: ID!): User
     deleteFriend(friendId: ID!): User
-    me: User
     addMovieSmall(imdbID: String): MovieSmall
     likeMovie(email: String!, imdbID: String!): User
 }`

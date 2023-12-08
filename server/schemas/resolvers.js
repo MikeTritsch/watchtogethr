@@ -22,8 +22,14 @@ const resolvers = {
         },
         movieSmalls: async() => {
             return MovieSmall.find()
-        }
+        },
 
+        me: async (parent, args, context) => {
+            if (context.user) {
+                return User.findOne({ _id: context.user._id }).populate('friends');
+            }
+            throw AuthenticationError;
+        }
 
     },
     Mutation: {
@@ -48,12 +54,6 @@ const resolvers = {
             const token = signToken(user)
 
             return { token, user }
-        },
-        me: async (parent, args, context) => {
-            if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate('friends');
-            }
-            throw AuthenticationError;
         },
         addMovie: async (parent, { _id, title }) => {
             const movie = await Movie.findOne({ title });
@@ -89,14 +89,16 @@ const resolvers = {
         },
 
 // Needs to take in user ID rather than friends ID
-        addFriend: async (parent, { id, friendId }) => {
-            return await User.findOneAndUpdate(
-                { userId: id },
+        addFriend: async (parent, { addFriendId, friendId }) => {
+            const user = await User.findOneAndUpdate(
+                { _id: addFriendId },
                 { $addToSet: { friends: friendId} },
                 { runValidators: true, new: true }
-            );
-
+            )
+            console.log(user);
+            return user.populate("friends");
         },
+
         deleteFriend: async (parent, { username }, context) => {
             const user = await User.findOneAndDelete(
                 { username: username },
