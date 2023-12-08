@@ -41,6 +41,8 @@ const Friend = () => {
     });
   };
 
+  // Add friend mutuation here needs to take in ID
+
   return (
     <>
       <div className="search-form-home container-fluid d-flex flex-column align-items-end">

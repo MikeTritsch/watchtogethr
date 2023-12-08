@@ -28,13 +28,12 @@ export const CREATE_USER = gql`
 
 
 export const ADD_FRIEND = gql `
-mutation AddFriend($username: String!, $userFriend: UserInput!) {
-  addFriend(username: $username, userFriend: $userFriend) {
-    username
-    friends {
+mutation addFriend($id: ID!, $userFriend: ID!) {
+  addFriend(_id: $ID, userFriend: $ID) {
+      _id
       username
+      friends
     }
-  }
   }`;
 
 export const ADD_MOVIESMALL = gql`
