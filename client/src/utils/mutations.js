@@ -34,3 +34,13 @@ export const ADD_MOVIESMALL = gql`
   }
 
 `;
+
+export const LIKE_MOVIE = gql`
+  mutation likeMovie($username: String!, $imdbID: String!) {
+    likeMovie(username: $username, imdbID: $imdbID) {
+      username
+      imdbID
+    }
+  }
+
+`;

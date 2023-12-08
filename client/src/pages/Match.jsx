@@ -6,14 +6,14 @@ import { useQuery, useMutation } from '@apollo/client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ADD_MOVIESMALL } from "../utils/mutations";
-
-const delay = ms => new Promise(res => setTimeout(res, ms));
+import { LIKE_MOVIE} from "../utils/mutations";
 
 
 const Match = () => {
 
   const [posts, setPosts] = useState([]);
   const [createMovieSmall] = useMutation(ADD_MOVIESMALL);
+  const [likeMovie] = useMutation(LIKE_MOVIE)
   let vals = returnRandomMovie();
 
   let movieUrl = vals[0];
@@ -49,6 +49,8 @@ const Match = () => {
       const { data } = await createMovieSmall({ variables: { imdbID: imdbID } });
       console.log('pink', data);
 
+      const { like } = await likeMovie({ variables: { username: imdbID, imdbID: imdbID } });
+      console.log('green', like);
     } catch (err) {
       console.error(err);
     }

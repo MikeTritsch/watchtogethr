@@ -49,6 +49,7 @@ type Mutation {
     deleteFriend(friendId: ID!): User
     me: User
     addMovieSmall(imdbID: String): MovieSmall
+    likeMovie(username: String!, imdbID: String!): User
 }`
 
 

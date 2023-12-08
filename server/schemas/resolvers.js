@@ -70,6 +70,20 @@ const resolvers = {
         addMovieSmall: async (parent, {imdbID}) => {
             return MovieSmall.create({ imdbID });
         },
+
+        likeMovie: async (parent, {imdbID, username}) => {
+            const self = await User.findOneAndUpdate( 
+                { usename: username },
+                { $addToSet: { movies: imdbID } }
+            )
+
+            if (!self) {
+                return res.status(404).json({ message: 'Error adding movie to your list'});
+            }
+
+            return {self}
+        },
+
         addFriend: async (parent, { username }, context) => {
             const user = await User.findOneAndUpdate(
                 { username: username },
