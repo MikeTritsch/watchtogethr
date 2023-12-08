@@ -91,13 +91,13 @@ const resolvers = {
         addFriend: async (parent, { username }, context) => {
             const user = await User.findOneAndUpdate(
                 { username: username },
-                { $addToSet: { friends: context.user._id } },
+                { $addToSet: { friends: context.userFriend} },
                 { runValidators: true, new: true }
             );
 
             const userFriend = await User.findOneAndUpdate(
-                { _id: _id },
-                { $addToSet: { friends: user._id } },
+                { username: context.userFriend.username },
+                { $addToSet: { friends: user.username } },
                 { runValidators: true, new: true }
             )
 
