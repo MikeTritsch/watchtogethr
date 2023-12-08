@@ -25,3 +25,12 @@ export const CREATE_USER = gql`
     }
   }
 `;
+
+export const ADD_MOVIESMALL = gql`
+  mutation addMovieSmall($imdbID: String!) {
+    addMovieSmall(imdbID: $imdbID) {
+      imdbID
+    }
+  }
+
+`;
