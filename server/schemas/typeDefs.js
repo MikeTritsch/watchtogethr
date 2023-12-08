@@ -4,7 +4,7 @@ _id: ID!
 username: String!
 email: String!
 password: String!
-movie: [Movie]
+movies: [Movie]
 friends: [User]
 likedMovies: [String]
 }
@@ -14,7 +14,7 @@ type Movie {
     Title: String!
     Director: String!
     Actors: String!
-    Year: Int!
+    Year: String!
     Plot: String!
     Genre: String!
     imdbID: String!
@@ -37,6 +37,8 @@ type Query {
     movies(username: String): [Movie]
     movie(imdbID: String!): Movie
     movieSmalls: [MovieSmall]!
+    findMovieByImdbID(imdbID: String!): Movie
+    findUserByEmail(email: String!): User
 }
 
 
@@ -50,7 +52,9 @@ type Mutation {
     deleteFriend(friendId: ID!): User
     me: User
     addMovieSmall(imdbID: String): MovieSmall
-    likeMovie(email: String!, imdbID: String!): User
+    likeMovie(email: String!, _id: ID!): User
+    createMovie(Actors: String!, Director: String!, Genre: String!, Plot: String!, Poster: String!, Title: String!, Year: String!, imdbID: String!): Movie
+    
 }`
 
 

@@ -22,7 +22,17 @@ const resolvers = {
         },
         movieSmalls: async() => {
             return MovieSmall.find()
+        },
+
+        findMovieByImdbID: async (parent, {imdbID}) => {
+            return Movie.findOne({imdbID: imdbID})
+        },
+
+
+        findUserByEmail: async (parent, {email}) => {
+            return User.findOne({email: email}).populate('movies')
         }
+
 
 
     },
@@ -76,16 +86,22 @@ const resolvers = {
             return MovieSmall.create({ imdbID });
         },
 
-        likeMovie: async(parent, {email, imdbID}) => {
+        likeMovie: async(parent, {email, _id}) => {
             const like = await User.findOneAndUpdate(
                 {email: email},
-                { $addToSet: { likedMovies: imdbID } },
+                { $addToSet: { movies: _id } },
             );
 
             if (!like) {
                 return res.status(404).json({ message: 'Cannot like movie!' });
             }
             return { email }
+        },
+
+
+        createMovie: async (parent, { Actors, Director, Genre, Plot, Poster, Title, Year, imdbID }) => {
+            reutrn = Movie.create({ Actors, Director, Genre, Plot, Poster, Title, Year, imdbID });
+
         },
 
         addFriend: async (parent, { username }, context) => {
