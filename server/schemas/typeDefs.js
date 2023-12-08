@@ -1,13 +1,12 @@
 const typeDefs = `
 type User {
-_id: ID!
-username: String!
-email: String!
-password: String!
-movie: [Movie]
-friends: [User]
-likedMovies: [String]
-userFriend: [User]
+    _id: ID!
+    username: String!
+    email: String!
+    password: String!
+    movies: [Movie]
+    friends: [User]
+    likedMovies: [String]
 }
 
 type Movie {
@@ -47,7 +46,7 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addMovie(movieId: ID!, title: String!): Movie
     deleteMovie(movieID: ID!): Movie
-    addFriend(username: String!): User
+    addFriend(id: ID!, friendId: ID!): User
     deleteFriend(friendId: ID!): User
     me: User
     addMovieSmall(imdbID: String): MovieSmall

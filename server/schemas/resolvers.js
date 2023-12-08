@@ -88,24 +88,13 @@ const resolvers = {
             return { email }
         },
 
-        addFriend: async (parent, { username }, context) => {
-            const user = await User.findOneAndUpdate(
-                { username: username },
-                { $addToSet: { friends: context.userFriend} },
+// Needs to take in user ID rather than friends ID
+        addFriend: async (parent, { id, friendId }) => {
+            return await User.findOneAndUpdate(
+                { userId: id },
+                { $addToSet: { friends: friendId} },
                 { runValidators: true, new: true }
             );
-
-            const userFriend = await User.findOneAndUpdate(
-                { username: context.userFriend.username },
-                { $addToSet: { friends: user.username } },
-                { runValidators: true, new: true }
-            )
-
-            if (!user) {
-                return res.status(404).json({ message: 'No user with this id' });
-            }
-
-            return { user }
 
         },
         deleteFriend: async (parent, { username }, context) => {
