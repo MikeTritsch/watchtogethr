@@ -1,5 +1,5 @@
 
-const { User, Movie } = require('../models')
+const { User, Movie, MovieSmall} = require('../models')
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -19,6 +19,9 @@ const resolvers = {
         },
         movie: async (parent, args) => {
             return Movie.findOne({ imdbID: args.imdbID })
+        },
+        movieSmalls: async() => {
+            return MovieSmall.find()
         }
 
 
@@ -68,6 +71,9 @@ const resolvers = {
                 console.alert('Movie was not removed from your list')
             }
 
+        },
+        addMovieSmall: async (parent, {imdbID}) => {
+            return MovieSmall.create({ imdbID });
         },
         addFriend: async (parent, { username }, context) => {
             const user = await User.findOneAndUpdate(
