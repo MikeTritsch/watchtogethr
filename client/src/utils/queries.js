@@ -6,9 +6,6 @@ query users {
         _id
         username
         email
-        password
-        friends
-        movies
     }
 }`;
 
@@ -19,9 +16,6 @@ query user($username: String) {
         _id
         username
         email
-        password
-        friends
-        movies
     }
 }`;
 
@@ -62,3 +56,4 @@ export const QUERY_ALL_MOVIES = gql`
     }
   }
 `;
+

@@ -11,10 +11,14 @@ const resolvers = {
             return Movie.find()
         },
         user: async (parent, args) => {
-            return await User.findById(args.id).populate('movies')
+            if (args.id) {
+                return await User.findById(args.id).populate('movies')
+            } else {
+                return await User.findOne({ username: args.username }).populate('movies')
+            }
         },
         movie: async (parent, args) => {
-            return Movie.findOne({imdbID: args.imdbID})
+            return Movie.findOne({ imdbID: args.imdbID })
         },
         movieSmalls: async() => {
             return MovieSmall.find()
@@ -23,9 +27,10 @@ const resolvers = {
 
     },
     Mutation: {
-        createUser: async (parent, { username, email, password}) => {
-            const user = await User.create({ username, email, password});
-            return user;
+        createUser: async (parent, { username, email, password }) => {
+            const user = await User.create({ username, email, password });
+            const token = signToken(user);
+            return { token, user };
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });

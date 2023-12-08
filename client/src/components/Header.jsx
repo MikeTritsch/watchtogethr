@@ -4,6 +4,8 @@ import redLogo from "../assets/images/RedVersion-removebg-preview.png"
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Auth from '../utils/auth';
+import Search from './Search'
+
 
 
 const Header = () => { 
@@ -11,7 +13,7 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  
+
   return (
     <>
       <div className="logo-div">
@@ -50,35 +52,8 @@ const Header = () => {
                     </button>
                   </li>
                   </ul>
-                  <div className="search-form-home container-fluid d-flex flex-column align-items-end">              
-              <form className="movie-search-form d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search for a friend..."
-                  aria-label="Search"
-                />
-                <Link to="/Friend">
-                  <button className="btn search-btns btn-outline-danger" type="button">
-                    Search
-                  </button>
-                </Link>
-              </form>
-              <form className="movie-search-form d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search movies..."
-                  aria-label="Search"
-                />
-                <Link to="/Match">
-                  <button className="btn search-btns btn-outline-danger" type="submit">
-                    Search
-                  </button>
-                </Link>
-              </form>
-            </div>
-                </>
+                  <Search></Search>
+              </>    
               ) : (
               <>
                 <ul className="navbar-nav">
