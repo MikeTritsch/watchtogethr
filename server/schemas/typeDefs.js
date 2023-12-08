@@ -1,5 +1,6 @@
 const typeDefs = `
 type User {
+
     _id: ID!
     username: String!
     email: String!
@@ -14,7 +15,7 @@ type Movie {
     Title: String!
     Director: String!
     Actors: String!
-    Year: Int!
+    Year: String!
     Plot: String!
     Genre: String!
     imdbID: String!
@@ -37,6 +38,8 @@ type Query {
     movies(username: String): [Movie]
     movie(imdbID: String!): Movie
     movieSmalls: [MovieSmall]!
+    findMovieByImdbID(imdbID: String!): Movie
+    findUserByEmail(email: String!): User
 }
 
 
@@ -49,7 +52,9 @@ type Mutation {
     addFriend(addFriendId: ID!, friendId: ID!): User
     deleteFriend(friendId: ID!): User
     addMovieSmall(imdbID: String): MovieSmall
-    likeMovie(email: String!, imdbID: String!): User
+    likeMovie(email: String!, _id: ID!): User
+    createMovie(Actors: String!, Director: String!, Genre: String!, Plot: String!, Poster: String!, Title: String!, Year: String!, imdbID: String!): Movie
+    
 }`
 
 

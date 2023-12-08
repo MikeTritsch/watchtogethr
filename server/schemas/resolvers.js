@@ -24,12 +24,23 @@ const resolvers = {
             return MovieSmall.find()
         },
 
+
+        findMovieByImdbID: async (parent, {imdbID}) => {
+            return Movie.findOne({imdbID: imdbID})
+        },
+
+
+        findUserByEmail: async (parent, {email}) => {
+            return User.findOne({email: email}).populate('movies')
+        }
+
         me: async (parent, args, context) => {
             if (context.user) {
                 return User.findOne({ _id: context.user._id }).populate('friends');
             }
             throw AuthenticationError;
         }
+
 
     },
     Mutation: {
@@ -76,10 +87,10 @@ const resolvers = {
             return MovieSmall.create({ imdbID });
         },
 
-        likeMovie: async(parent, {email, imdbID}) => {
+        likeMovie: async(parent, {email, _id}) => {
             const like = await User.findOneAndUpdate(
                 {email: email},
-                { $addToSet: { likedMovies: imdbID } },
+                { $addToSet: { movies: _id } },
             );
 
             if (!like) {
@@ -88,11 +99,20 @@ const resolvers = {
             return { email }
         },
 
+
+        createMovie: async (parent, { Actors, Director, Genre, Plot, Poster, Title, Year, imdbID }) => {
+            reutrn = Movie.create({ Actors, Director, Genre, Plot, Poster, Title, Year, imdbID });
+
+        },
+
+
+
 // Needs to take in user ID rather than friends ID
         addFriend: async (parent, { addFriendId, friendId }) => {
             const user = await User.findOneAndUpdate(
                 { _id: addFriendId },
                 { $addToSet: { friends: friendId} },
+
                 { runValidators: true, new: true }
             )
             console.log(user);

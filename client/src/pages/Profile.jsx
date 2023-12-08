@@ -1,6 +1,31 @@
-import Poster from "../assets/images/startrek-placeholder.jpg";
+import ProfileMovie from "../components/ProfileMovie"
+import { FIND_MOVIE_BY_IMDBID, QUERY_USERS } from "../utils/queries";
+import { QUERY_USER_BY_EMAIL } from "../utils/queries";
+import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 
 const Profile = () => {
+
+
+  let sampleMovie = 
+    [
+      {
+          "Title": "Across the Universe",
+          "Plot": "The music of The Beatles and the Vietnam War form the backdrop for the romance between an upper-class American girl and a poor Liverpudlian artist.",
+          "Genre": "Drama, Fantasy, History",
+          "Year": "2009",
+          "Actors": "Evan Rachel Wood, Jim Sturgess, Joe Anderson",
+          "Director": "Julie Taymore",
+          "imdbID": "tt0445922",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BMDViYjYzMTctNDFlNS00NmFmLWJlMGUtZDFmZmFjY2Q2ODhjXkEyXkFqcGdeQXVyMTU3NDU4MDg2._V1_SX300.jpg"
+      }
+  ]    
+  console.log(localStorage.getItem("loggedInUsername"))
+  const {loading, data} = useQuery(QUERY_USER_BY_EMAIL, {
+    variables: {email: localStorage.getItem("loggedInUsername")}
+  });
+
+  const movies = data?.findUserByEmail.movies || sampleMovie
+
   return (
     <>
 
@@ -20,24 +45,7 @@ const Profile = () => {
               </form>
             </div> */}
             <ul className="profile-ul">
-              <li className="profile-card card mb-3">
-                <div className="card mb-3">
-                  <div className="row g-0">
-                    <div className="poster-container col-md-4">
-                      <img src={Poster} className="profile-poster img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Star Trek</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-muted">Genre: Genre</small></p>
-                        <p className="card-text"><small className="text-muted">Starring: Genre</small></p>
-                        <p className="card-text"><small className="text-muted">Year: Genre</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              < ProfileMovie movies={movies}/>
             </ul>
           </div>
           <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
