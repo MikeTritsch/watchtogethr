@@ -62,7 +62,9 @@ export const ADD_FRIEND = gql `
 mutation addFriend($addFriendId: ID!, $friendId: ID!) {
   addFriend(addFriendId: $addFriendId, friendId: $friendId) {
     username
-    likedMovies
+    movies {
+      _id
+    }
     _id
   }
 }`
