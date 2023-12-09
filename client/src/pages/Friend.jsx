@@ -1,4 +1,5 @@
 import { RiHeartAddFill } from "react-icons/ri";
+import FriendInfo from "../components/FriendInfo"
 import { ADD_FRIEND } from '../utils/mutations'
 import { QUERY_USER } from "../utils/queries";
 import { useLazyQuery, useMutation } from "@apollo/client";
@@ -8,6 +9,7 @@ import Auth from '../utils/auth'
 
 const Friend = () => {
   const [userData, setUserData] = useState({});
+  const [friendData, setFriendData] = useState({});
   const loggedIn = Auth.loggedIn();
   console.log(loggedIn);
   const [findFriend] = useLazyQuery(QUERY_USER);
@@ -44,14 +46,14 @@ const Friend = () => {
   };
 
   // Add friend mutuation here needs to take in ID
-  const addFriendBtn = (e) => {
+  const addFriendBtn = async (e) => {
     const currentUser = Auth.getProfile().data;
     console.log(currentUser);
 
-    const { data: friendData } = addFriend({ variables: {
+    const { data: friendData } = await addFriend({ variables: {
       addFriendId: currentUser._id, friendId: userData._id
     }})
-    console.log(friendData);
+    console.log(userData);
   }
 
   return (
@@ -88,7 +90,7 @@ const Friend = () => {
             </div>
           </div>
         </div>
-        {/* <FriendInfo friendId={userData._id}/> */}
+        <FriendInfo friend={userData}/>
       </div>
     </>
   );

@@ -14,6 +14,9 @@ export const QUERY_USER =
 query user($username: String) {
     user(username: $username) {
         _id
+        movies {
+          _id
+        }
         username
         email
     }
