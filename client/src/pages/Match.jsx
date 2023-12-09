@@ -2,6 +2,7 @@ import watchBtn from "../assets/images/icons/watch-large.png"
 import nopeBtn from "../assets/images/icons/dont-watch-large.png"
 import Movie from "../components/Movie"
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
+import Auth from '../utils/auth'
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -19,6 +20,7 @@ const Match = () => {
 
 
   const [posts, setPosts] = useState([]);
+  const loggedIn = Auth.loggedIn();
   const [createMovieSmall] = useMutation(ADD_MOVIESMALL);
   const [createMovie] = useMutation(CREATE_MOVIE);
   const [likeMovie] = useMutation(LIKE_MOVIE);
@@ -75,6 +77,7 @@ const Match = () => {
 
   return (
     <>
+    {!loggedIn && window.location.assign('/')}
       <div className="card-container">
         <div className="card match-card">
           <div>
