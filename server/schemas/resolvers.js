@@ -32,7 +32,7 @@ const resolvers = {
 
         findUserByEmail: async (parent, {email}) => {
             return User.findOne({email: email}).populate('movies')
-        }
+        },
 
         me: async (parent, args, context) => {
             if (context.user) {
