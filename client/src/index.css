@@ -36,10 +36,6 @@ a {
   color: red;
 }
 
-.search-form-home {
-  padding-bottom: 10px;
-}
-
 
 .search-form-home button{
   width: 100px;
@@ -318,10 +314,6 @@ strong {
   color: black;
 }
 
-.movie-search-form {
-  align-items: center;
-}
-
 .friend-card {
   display: flex;
   justify-content: center;
@@ -350,4 +342,37 @@ strong {
 #error-page {
   color: white;
   margin: 25px;
+}
+
+/* Find Friends Search */
+
+.search-form-home {
+  padding: 10px;
+  display: flex;
+  border: red solid 2px;
+}
+
+.movie-search-form {
+  padding: 20px;
+}
+
+.friend-search-card {
+  border: solid red 5px;
+  margin: 10px;
+  width: 500px;
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.no-movies-found-text {
+  text-align: center;
+  color: red;
+}
+
+.friend-movie-title {
+  font-size: small;
+}
+
+.list-group-search{
+  background-color: white;
+  padding: 15px;
 }

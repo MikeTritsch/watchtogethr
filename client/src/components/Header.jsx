@@ -46,6 +46,11 @@ const Header = () => {
                     </Link>
                   </li>
                   <li className="nav-item">
+                    <Link className="nav-item" to="/Friend">
+                      Find Friends
+                    </Link>
+                  </li>
+                  <li className="nav-item">
                     <button className="logout-btn nav-item" onClick={logout}>
                       Logout
                     </button>

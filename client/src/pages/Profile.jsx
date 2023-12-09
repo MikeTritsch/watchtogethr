@@ -2,10 +2,11 @@ import ProfileMovie from "../components/ProfileMovie"
 import { FIND_MOVIE_BY_IMDBID, QUERY_USERS } from "../utils/queries";
 import { QUERY_USER_BY_EMAIL } from "../utils/queries";
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
+import Auth from '../utils/auth'
 
 const Profile = () => {
 
-
+  const loggedIn = Auth.loggedIn();
   let sampleMovie = 
     [
       {
@@ -28,7 +29,7 @@ const Profile = () => {
 
   return (
     <>
-
+    {!loggedIn && window.location.assign('/')}
       <div className="profile-container">
         <nav>
           <div className="nav nav-tabs" id="nav-tab" role="tablist">

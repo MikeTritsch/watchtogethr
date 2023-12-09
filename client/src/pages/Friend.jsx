@@ -59,7 +59,7 @@ const Friend = () => {
   return (
     <>
     {!loggedIn && window.location.assign('/')}
-      <div className="search-form-home container-fluid d-flex flex-column align-items-end">
+      <div className="search-form-home container-fluid d-flex flex-column align-items-center">
         <form className="movie-search-form d-flex" onSubmit={searchFriends}>
           <label htmlFor="username"></label>
           <input
