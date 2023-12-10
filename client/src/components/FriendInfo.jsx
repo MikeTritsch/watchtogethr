@@ -18,7 +18,7 @@ return (
         friend.movies.map((movie) => (
           <li className="friend-movie-title list-group-item" key={movie._id}>
             <h6 className="card-title">{movie._id}</h6>
-            <p className="card-text">Movie Title: {movie.title}</p>
+            <p className="card-text">Movie Title: {movie.Title}</p>
           </li>
         ))
       ) : (
