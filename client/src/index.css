@@ -385,3 +385,9 @@ strong {
 .addFriend-icon:hover {
   color: red;
 }
+
+.no-friend-found {
+  color: red;
+  font-size: 200%;
+  filter: drop-shadow(0 0 .5rem rgb(0, 0, 0));
+}
