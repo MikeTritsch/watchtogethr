@@ -3,6 +3,8 @@ import nopeBtn from "../assets/images/icons/dont-watch-large.png"
 import Movie from "../components/Movie"
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import Auth from '../utils/auth'
+import Flip from 'react-reveal/Flip';
+import Fade from 'react-reveal/Fade';
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -78,6 +80,7 @@ const Match = () => {
   return (
     <>
     {!loggedIn && window.location.assign('/')}
+    <Flip left>
       <div className="card-container">
         <div className="card match-card">
           <div>
@@ -97,6 +100,8 @@ const Match = () => {
 
         </div>
       </div>
+      </Flip>
+      <Fade top>
       <div className="gap-5 yes-no-container">
         <div className="no-watch-btn">
           <button className="nope-btn">
@@ -109,6 +114,7 @@ const Match = () => {
           </button>
         </div>
       </div>
+      </Fade>
     </>
   )
 }
