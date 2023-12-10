@@ -63,7 +63,7 @@ const Friend = () => {
         <form className="movie-search-form d-flex" onSubmit={searchFriends}>
           <label htmlFor="username"></label>
           <input
-            className="form-control me-2"
+            className="form-control border-danger me-2"
             type="username"
             value={formState.username}
             onChange={handleChange}
@@ -73,7 +73,7 @@ const Friend = () => {
           />
 
           <button
-            className="btn search-btns btn-outline-danger"
+            className="btn search-btns btn-danger"
             type="button"
             onClick={searchFriends}
           >

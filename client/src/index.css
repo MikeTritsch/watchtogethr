@@ -309,10 +309,10 @@ strong {
   width: 200px;
 }
 
-.search-btns {
+/* .search-btns {
   background-color: gray;
   color: black;
-}
+} */
 
 .friend-card {
   display: flex;
@@ -322,8 +322,13 @@ strong {
 .friend-card-body {
   text-align: center;
   width: 500px;
-  border: 5px red solid;
+  /* border: 5px red solid; */
   filter: drop-shadow(0 0 0.35rem red);
+}
+
+.friend-card-body:hover {
+  border: 2px red solid;
+  filter: drop-shadow(0 0 .5rem red);
 }
 
 .addFriend {
@@ -349,7 +354,7 @@ strong {
 .search-form-home {
   padding: 10px;
   display: flex;
-  border: red solid 2px;
+  /* border: red solid 2px;*/
 }
 
 .movie-search-form {
@@ -357,7 +362,7 @@ strong {
 }
 
 .friend-search-card {
-  border: solid red 5px;
+  /* border: solid red 5px; */
   margin: 10px;
   width: 500px;
   filter: drop-shadow(0 0 0.35rem red);
