@@ -80,6 +80,8 @@ const Friend = () => {
             Search
           </button>
         </form>
+        {Object.keys(userData).length > 0 && (
+          <>
         <div className="friend-card">
           <div className="friend-card-body card">
             <div className="card-body">
@@ -91,7 +93,14 @@ const Friend = () => {
           </div>
         </div>
         <FriendInfo friend={userData}/>
+        </>
+        )}
+
+        {!userData && (
+          <p>No user found with that username.</p>
+        )}
       </div>
+        
     </>
   );
 };
