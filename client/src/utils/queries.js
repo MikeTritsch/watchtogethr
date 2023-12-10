@@ -19,6 +19,9 @@ query user($username: String) {
         }
         username
         email
+        friends {
+          _id
+        }
     }
 }`;
 
