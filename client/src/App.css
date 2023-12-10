@@ -1,9 +1,12 @@
+/* Background Image */
 body {
   background-image: url('./assets/images/couple-hero.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   min-height: 200vh;
 }
+
+/* Media Queries */
 
 @media screen and (min-width: 1025px) {
   body {
@@ -74,27 +77,3 @@ body {
   background-position: center;
   }
 }
-
-/* @media screen and (max-width: 692px) {
-  .nav-item {
-    font-size: 60%;
-  }
-
-  .navbar-toggler {
-    position: relative;
-    top: 100px;
-    left: 150px;
-  }
-
-  .navbar-nav {
-    position: relative;
-    top: 100px;
-    left: 150px;
-  }
-
-  .collapse {
-    position: relative;
-    top: 20px;
-    right: 70;
-  }
-} */

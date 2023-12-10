@@ -1,3 +1,4 @@
+/* Global & Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,6 +10,12 @@
 a {
   text-decoration: none;
 }
+
+strong {
+  color: red;
+}
+
+/* Header/Nav */
 
 .navbar {
   width: 100%;
@@ -34,11 +41,6 @@ a {
 
 .logout-btn:hover {
   color: red;
-}
-
-
-.search-form-home button{
-  width: 100px;
 }
 
 .navbar-toggler {
@@ -73,6 +75,8 @@ a {
   position: relative;
   bottom: 150px;
 }
+
+/* Home Page */
 
 .motto-div {
   display: flex;
@@ -142,14 +146,44 @@ a {
   font-size: large;
 }
 
-strong {
-  color: red;
-}
-
 .home-to-join {
   text-decoration: none;
   color: black;
 }
+
+.contact-links {
+  color: white;
+}
+
+/* Profile Page */
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border: none;
+}
+
+.nav-link {
+  color: black;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 150%;
+  text-align: center;
+  background: rgba(128, 128, 128,0.7);
+}
+
+.tab-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.profile-ul {
+  padding: 0px;
+}
+
+/* Watchtogethr/Match Page */
 
 .card-img-top {
   width: 500px;
@@ -247,37 +281,14 @@ strong {
   padding: 20px;
 }
 
-.contact-links {
-  color: white;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  border: none;
-}
-
-.nav-link {
-  color: black;
-  border-radius: 5px;
-  width: 300px;
-  font-size: 150%;
-  text-align: center;
-  background: rgba(128, 128, 128,0.7);
-}
-
+/* Signup Page */
 
 #signupCard {
   background: rgba(128, 128, 128,0.7);
   filter: drop-shadow(0 0 0.35rem);
 }
 
-.tab-content {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-}
+/* ProfileMove Component */
 
 .profile-poster {
   height: 250px;
@@ -295,54 +306,7 @@ strong {
   filter: drop-shadow(0 0 0.35rem red);
 }
 
-.profile-search {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
-
-.profile-ul {
-  padding: 0px;
-}
-
-.search-form-home input{
-  width: 200px;
-}
-
-/* .search-btns {
-  background-color: gray;
-  color: black;
-} */
-
-.friend-card {
-  display: flex;
-  justify-content: center;
-}
-
-.friend-card-body {
-  text-align: center;
-  width: 500px;
-  /* border: 5px red solid; */
-  filter: drop-shadow(0 0 0.35rem red);
-}
-
-.friend-card-body:hover {
-  border: 2px red solid;
-  filter: drop-shadow(0 0 .5rem red);
-}
-
-.addFriend {
-  color: black;
-}
-
-.addFriend-icon {
-  height: 50px;
-  width: 50px;
-}
-
-.addFriend-icon:hover {
-  color: red;
-}
+/* Error Page */
 
 #error-page {
   color: white;
@@ -380,4 +344,44 @@ strong {
 .list-group-search{
   background-color: white;
   padding: 15px;
+}
+
+/* Find Friends Page */
+
+.search-form-home button{
+  width: 100px;
+}
+
+.search-form-home input{
+  width: 200px;
+}
+
+.friend-card {
+  display: flex;
+  justify-content: center;
+}
+
+.friend-card-body {
+  text-align: center;
+  width: 500px;
+  /* border: 5px red solid; */
+  filter: drop-shadow(0 0 0.35rem red);
+}
+
+.friend-card-body:hover {
+  border: 2px red solid;
+  filter: drop-shadow(0 0 .5rem red);
+}
+
+.addFriend {
+  color: black;
+}
+
+.addFriend-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.addFriend-icon:hover {
+  color: red;
 }

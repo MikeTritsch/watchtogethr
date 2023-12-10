@@ -39,23 +39,11 @@ const Profile = () => {
         </nav>
         <div className="tab-content" id="nav-tabContent">
           <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          {/* <div className="profile-search container-fluid">
-              <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Find A Movie" aria-label="Search"/>
-                  <button className="btn btn-outline-danger" type="submit">Search</button>
-              </form>
-            </div> */}
             <ul className="profile-ul">
               < ProfileMovie movies={movies}/>
             </ul>
           </div>
           <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            {/* <div className="profile-search container-fluid">
-              <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Find Your Friends" aria-label="Search"/>
-                  <button className="btn btn-outline-danger" type="submit">Search</button>
-              </form>
-            </div> */}
             <ul>
               <li className="profile-card card mb-3">
                 <div className="card mb-3">
