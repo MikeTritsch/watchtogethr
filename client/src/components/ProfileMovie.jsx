@@ -1,6 +1,10 @@
+
 export default function ProfileMovie({ movies }) {
 
+
+
     return (
+      
         <div>
         {movies.map((movie) => (
 

@@ -77,3 +77,8 @@ body {
   background-position: center;
   }
 }
+
+.friend-name {
+  font-size: 30px;
+  text-align: center;
+}
