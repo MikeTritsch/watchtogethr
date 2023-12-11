@@ -183,6 +183,16 @@ strong {
   padding: 0px;
 }
 
+.friend-icon {
+  position: relative;
+  left: 45px;
+  padding: 10px;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  border: solid black 2px;
+}
+
 /* Watchtogethr/Match Page */
 
 .card-img-top {
