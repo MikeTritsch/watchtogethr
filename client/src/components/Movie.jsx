@@ -1,7 +1,3 @@
-/* eslint-disable react/prop-types */
-
-
-
 export default function Movie(props) {
 
     // Helper function that generates a random width for our placeholder images

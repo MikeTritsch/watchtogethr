@@ -4,6 +4,9 @@ import { QUERY_USER_BY_EMAIL } from "../utils/queries";
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import Auth from '../utils/auth'
 
+
+//a user's profile page. Shows movies they want to watch and friends they have added.
+
 const Profile = () => {
 
   const loggedIn = Auth.loggedIn();

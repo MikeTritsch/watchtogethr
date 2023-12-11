@@ -1,5 +1,6 @@
 import { useRouteError } from 'react-router-dom';
 
+//page appears if there's an error. Also check your car's warranty.
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);

@@ -1,8 +1,5 @@
-/* eslint-disable react/prop-types */
-
 export default function ProfileMovie({ movies }) {
 
-    // Helper function that generates a random width for our placeholder images
     return (
         <div>
         {movies.map((movie) => (

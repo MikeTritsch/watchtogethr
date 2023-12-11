@@ -13,7 +13,7 @@ import { CREATE_MOVIE } from "../utils/mutations"
 import { LIKE_MOVIE } from "../utils/mutations";
 import { FIND_MOVIE_BY_IMDBID } from "../utils/queries";
 
-
+//the page that displays movie data and enables a user to say whether or not they want to watch it.
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 

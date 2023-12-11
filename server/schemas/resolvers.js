@@ -2,6 +2,8 @@
 const { User, Movie, MovieSmall} = require('../models')
 const { signToken, AuthenticationError } = require('../utils/auth');
 
+//Queries for all users, all movies, an individual user, an individual movie, find movies by their IMDB id, and find users by email address. "me" query is critical for the friend functionalities.
+
 const resolvers = {
     Query: {
         users: async () => {
@@ -41,7 +43,7 @@ const resolvers = {
             throw AuthenticationError;
         }
 
-
+//Mutations to add new user, login established user, add and remove movies from a personal list, and add and remove friends from a personal list.
     },
     Mutation: {
         createUser: async (parent, { username, email, password }) => {
@@ -105,9 +107,6 @@ const resolvers = {
 
         },
 
-
-
-// Needs to take in user ID rather than friends ID
         addFriend: async (parent, { addFriendId, friendId }) => {
             const user = await User.findOneAndUpdate(
                 { _id: addFriendId },
@@ -142,27 +141,3 @@ const resolvers = {
 }
 
 module.exports = resolvers
-
-//do we need update/remove user?
-//how do we handle adding friends?
-//what queries do we really need? Find a single user to login, search for friends to add to friend list, search for media by title, delete friend, delete media from array
-//how to we assign movies to a user? (no entry, just ID#)
-
-// updateUser: async(parent, args) => {
-//     const user = await User.findOneAndUpdate(
-//         {_id}
-//     )
-//     return user
-// },
-// deleteUser: async(parent, args) => {
-//     const user = await User.deleteOne(
-//         {_id}
-//     )
-//     return user
-// },
-
-// addUser: async (parent, {username, email, password}) => {
-//     const user = await User.create({ username, email, password });
-//     const token = signToken(user);
-//     return { token, user };
-// },

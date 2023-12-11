@@ -16,7 +16,7 @@ Using the OMDB open-source API, as well as MongoDB and GraphQL, we created an ap
 
 ## User Story
 
-As a couple who can never agree on what to watch,
+AS A couple who can never agree on what to watch,
 
 I WANT an application that will match up movies and shows my partner and I are both interested in watching,
 
@@ -51,6 +51,11 @@ Ultimately we all learned a lot, and are very proud of the results.
 
 ## Icebox Items:
 <ul>
+<li>Functionality to link to available streaming services.</li>
+<li>Give users the ability to rate media after they have watched it.</li>
+<li>Notify users when their friends have "liked" something that the user also wants to watch.</li>
+<li>Two-way friending.</li>
+<li>Ability to search for a specific piece of media, not just like/dislike randomly generated options.</li>
 </ul>
 
 
