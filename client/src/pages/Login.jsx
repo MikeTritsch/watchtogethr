@@ -30,7 +30,6 @@ const Login = () => {
     } catch (error) {
       console.error(error);
     }
-    console.log("LOGGEDIN");
     localStorage.setItem("loggedInUsername", formState.email)
     setFormState({
       email: '',

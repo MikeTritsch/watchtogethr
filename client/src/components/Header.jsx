@@ -30,7 +30,7 @@ const Header = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          //conditional rendering upon login
+          {/* conditional rendering upon login */}
           <div className="collapse navbar-collapse" id="navbarNav">
               {Auth.loggedIn() ? (
                 <>
