@@ -43,6 +43,7 @@ query findUserByEmail($email: String!) {
           Title
           Year
         }
+
     }
 }`;
 
