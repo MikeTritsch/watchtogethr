@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+//db queries from the front-end
+
 export const QUERY_USERS = gql`
 query users {
     user {

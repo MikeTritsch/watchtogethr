@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom';
 import Rotate from 'react-reveal/Rotate';
 import Auth from '../utils/auth.js'
 
-// const styles = {
-//   cardStyle: {
-//     background: 'grey',
-//   },
-// };
+//createUser front-end functionality
 
 
 const Signup = () => {
@@ -27,12 +23,6 @@ const Signup = () => {
       ...prevFormState,
       [name]: value,
     }));
-
-    // setFormState({
-    //   ...formState,
-    //   [name]: value,
-      
-    // });
   };
 
   const handleFormSubmit = async (event) => {
@@ -92,4 +82,3 @@ const Signup = () => {
 
 export default Signup;
 
-//<a href='#Login' className="text-danger">Click here to login.</a>

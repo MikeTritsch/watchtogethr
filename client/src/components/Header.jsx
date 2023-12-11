@@ -1,11 +1,10 @@
-// import logo from "../assets/images/WatchTogethr.png";
-// import lightLogo from "../assets/images/WatchTogethrWhiteVersion.png";
 import redLogo from "../assets/images/RedVersion-removebg-preview.png"
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Auth from '../utils/auth';
 
 
+//Header that goes across all pages of the app
 
 const Header = () => { 
   const logout = (event) => {
@@ -31,6 +30,7 @@ const Header = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          //conditional rendering upon login
           <div className="collapse navbar-collapse" id="navbarNav">
               {Auth.loggedIn() ? (
                 <>

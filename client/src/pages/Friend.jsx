@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 
+//finds and renders user's list of friends
+
 const Friend = () => {
   const [userData, setUserData] = useState({});
   const [friendData, setFriendData] = useState({});
@@ -47,7 +49,7 @@ const Friend = () => {
     });
   };
 
-  // Add friend mutuation here needs to take in ID
+
   const addFriendBtn = async (e) => {
     const currentUser = Auth.getProfile().data;
     console.log(currentUser);

@@ -1,5 +1,4 @@
 function searchFilms(search_term) {
-    // replace `octocat` with anyone else's GitHub username
 
     var baseUrl = "http://www.omdbapi.com/?apikey=ab6850df&page=1&s="
 

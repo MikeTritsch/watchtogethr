@@ -5,6 +5,7 @@ import Auth from '../utils/auth';
 import { Link } from 'react-router-dom'
 import Rotate from 'react-reveal/Rotate';
 
+//deals with login/create an account functionality
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -16,11 +17,6 @@ const Login = () => {
       ...prevFormState,
       [name]: value,
     }));
-
-    // setFormState({
-    //   ...formState,
-    //   [name]: value,
-    // })
   }
 
   const handleFormSubmit = async (e) => {
@@ -70,4 +66,3 @@ const Login = () => {
 };
 
 export default Login
-//39style={styles.cardStyle}

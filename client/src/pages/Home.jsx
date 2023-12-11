@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Roll from "react-reveal";
 
+//Homepage rendering
+
 const Home = () => {
   return (
     <>
