@@ -12,7 +12,7 @@ export default function ProfileFriend({ friends }) {
           <div className="card mb-3">
             <div className="row g-0">
               <div className="col-md-4">
-                <img src="/user-icon.png" className="img-fluid rounded-start" alt="..." />
+                <img src="/user-icon.png" className="img-fluid rounded-start friend-icon" alt="Friend Outline Icon" />
                 <div className="friend-name">{friend.name}</div>
               </div>
               <div className="col-md-8">
