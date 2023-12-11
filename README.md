@@ -38,8 +38,17 @@ When the page loads, you will see an informational page with a button to JOIN Wa
 
 <img width="1550" alt="Screenshot 2023-12-08 at 19 23 21" src="https://github.com/MikeTritsch/watchtogethr/assets/144712161/152a8bbc-a8bf-4d3a-9fe0-8ea1e8abdd6f">
 
-When you create an account, inputting your email address, chosen username and chosen password, you are taken to a Profile page.
+When you create an account, inputting your email address, chosen username and chosen password, you are taken to a Profile page where you have the option to see a list of the movies you have liked, and a list of the friends you have connected with. 
 
+<img width="1549" alt="Screenshot 2023-12-11 at 10 04 06" src="https://github.com/MikeTritsch/watchtogethr/assets/144712161/f220573a-9f79-440b-bd9d-d772cdff1d5a">
+
+When you click Watchtogethr in the nav bar, you are presented with randomly generated media options that you can "Like" (green camera) or Dislike (red camera). If you click the green camera, the movie will be added to your list and you will be presented with another option. If you click the red camera you will be presented with another option. 
+
+<img width="1678" alt="Screenshot 2023-12-11 at 10 05 52" src="https://github.com/MikeTritsch/watchtogethr/assets/144712161/732b22fb-3651-443f-93cf-8e7dd083139b">
+
+If you click on Find Friends in the nav bar, you can search for your friends by username. When you find them, you can add them to your list by clicking on the heart with the plus sign. You can also see the movies that your friends have liked.
+
+<img width="1376" alt="Screenshot 2023-12-11 at 10 32 12" src="https://github.com/MikeTritsch/watchtogethr/assets/144712161/bd5eda46-3f56-4f6d-a570-ec956c8c2f70">
 
 
 ## Challenges
@@ -63,6 +72,8 @@ Ultimately we all learned a lot, and are very proud of the results.
 
 Watchtogethr was a collaboration between Michael Tritsch, Libby You, Martin Sandoval, Estevan Gonzales and Elizabeth Tucker. 
 
+Watchtogethr is powered by the <a href="http://www.omdbapi.com">OMDB opensource API</a>.
+
 Technologies used:  
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  
@@ -75,7 +86,7 @@ Technologies used:
 ![MySQL](https://img.shields.io/badge/mysql-%2300000f.svg?style=for-the-badge&logo=mysql&logoColor=white)  
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)  
 
-The Watchtogethr Team would like to thank instructor Leah Daniels, TAs Ian Darland and Diem Ly, and tutors Dru Sanchez and Meg Meyers for their invaluable assistance when we hit any number of walls.
+The Watchtogethr Team would like to thank instructor Leah Nelson, TAs Ian Darland and Diem Ly, and tutors Dru Sanchez and Meg Meyers for their invaluable assistance when we hit any number of walls.
 
 ## Initial Wireframes 
 ![Project3DBDraft](https://github.com/MikeTritsch/watchtogethr/assets/144712161/975c7225-38f0-41d9-add0-f316e567a3b2)
